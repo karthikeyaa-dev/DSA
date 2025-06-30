@@ -10,13 +10,13 @@ class DoublyLinkedList:
     def __init__(self):
         self.head=None
 
-    def print_doubly_linked_list(self):
+    def print_doubly_linked_list(self)->None:
         tem=self.head
         while tem.data!=None:
             print(tem.data, end="->")
         tem=tem.next
     
-    def print_doubly_linked_list_in_reverse(self):
+    def print_doubly_linked_list_in_reverse(self)->None:
         tem=self.head
         while tem.next!=None:
             tem=tem.next
@@ -32,7 +32,7 @@ class ADD_NODE(ABC):
         pass
 
 class ADD_NODE_END(ADD_NODE):
-    def add_node(self, data):
+    def add_node(self, data)->None:
         tem=self.linked_list.head
         while tem.next!=None:
             tem=tem.next
@@ -41,7 +41,7 @@ class ADD_NODE_END(ADD_NODE):
         new_node.prev=tem
 
 class ADD_NODE_BEGIN(ADD_NODE):
-    def add_node(self, data):
+    def add_node(self, data)->None:
         new_node=Node(data)
         if self.linked_list.head==None:
             self.linked_list.head=new_node
@@ -50,4 +50,42 @@ class ADD_NODE_BEGIN(ADD_NODE):
             self.linked_list.head.prev=new_node
             self.linked_list.head=new_node
 
+
+class ADD_NODE_AFTER_X(ADD_NODE):
+    def add_node(self,x, data) ->None:
+        new_node=Node(data)
+        tem=self.linked_list.head
+        while tem!=None:
+            if tem.data==x:
+                break
+            tem=tem.next
+        if tem==None:
+            return "we cannot add any node"
+        new_node.next=tem.next
+        new_node.prev=tem
+        tem.next=new_node
+
+        if new_node!=None:
+            new_node.next.prev=new_node
+
+class ADD_NODE_BEFORE_X(ADD_NODE):
+    def add_node(self,x, data)->None:
+        new_node=Node(data)
+        tem=self.linked_list.head
+        if tem==None:
+            return "That the list is empty"
+        if tem.data==x:
+            new_node.next=tem
+            tem.prev=new_node
+            self.linked_list.head=new_node
+        while tem.next!=None:
+            if tem.data==x:
+                break
+            tem=tem.next
+        if tem is None:
+            return "Value not found in the list"
+        new_node.prev=tem.prev
+        new_node.next=tem
+        tem.prev.next=new_node
+        tem.prev=new_node
 
