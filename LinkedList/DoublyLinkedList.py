@@ -89,3 +89,22 @@ class ADD_NODE_BEFORE_X(ADD_NODE):
         tem.prev.next=new_node
         tem.prev=new_node
 
+class DELETE_NODE(ABC):
+    def __init__(self, linked_list):
+        self.linked_list=linked_list
+    
+    def delete_node(self, *args, **kwargs):
+        pass
+
+class DELETE_NODE_BEGIN(DELETE_NODE):
+    def delete_node(self, *args, **kwargs)->None:
+        head = self.linked_list.head
+        if head is None:
+            return "The list is empty"
+        if head.next is None:
+            self.linked_list.head = None
+            return
+        self.linked_list.head = head.next
+        self.linked_list.head.prev = None
+
+        
