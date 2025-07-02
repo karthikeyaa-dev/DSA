@@ -107,4 +107,15 @@ class DELETE_NODE_BEGIN(DELETE_NODE):
         self.linked_list.head = head.next
         self.linked_list.head.prev = None
 
+class DELETE_NODE_END(DELETE_NODE):
+    def delete_node(self, *args, **kwargs)->None:
+        head=self.linked_list.head
+        if head==None:
+            return "There is nothing delete"
+        if head.next==None:
+            self.linked_list.head=None
+        while head.next!=None:
+            head=head.next
+        head.prev.next=None
+
         
