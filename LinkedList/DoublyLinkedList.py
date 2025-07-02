@@ -118,4 +118,28 @@ class DELETE_NODE_END(DELETE_NODE):
             head=head.next
         head.prev.next=None
 
+class DELETE_NODE_AFTER_X(DELETE_NODE):
+    def delete_node(self, x) -> None:
+        head = self.linked_list.head
+        if head is None:
+            return "There is nothing to delete"
+        current = head
+        while current is not None:
+            if current.data == x:
+                break
+            current = current.next
+        if current is None:
+            print(f"Node with value {x} not found")
+            return
+        if current.next is None:
+            print(f"There is no node after {x} to delete")
+            return
+        node_to_delete = current.next
+        current.next = node_to_delete.next
+        if node_to_delete.next is not None:
+            node_to_delete.next.prev = current
+        print(f"Deleted node after {x}")
+
+
+
         
