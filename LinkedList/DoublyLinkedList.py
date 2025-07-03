@@ -163,6 +163,28 @@ class DELETE_NODE_BEFORE_X(DELETE_NODE):
                 return
             current = current.next
         print(f"No node found before {x} to delete")
+
+class DELETE_NODE_X(DELETE_NODE):
+    def delete_node(self, x):
+        head=self.linked_list.head
+        if head==None:
+            return "The List is empty to delete"
+        if head.data == x:
+            self.linked_list.head = head.next
+            if head.next:
+                head.next.prev = None
+            return
+        while head is not None:
+            if head.data == x:
+                break
+            head = head.next
+        if head is None:
+            print(f"No node found with value {x} to delete")
+            return
+        if head.prev:
+            head.prev.next = head.next
+        if head.next:
+            head.next.prev = head.prev
         
 
 
