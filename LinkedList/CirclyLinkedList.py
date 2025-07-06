@@ -35,6 +35,4 @@ class CircularLinkedList:
 # Usage
 cll = CircularLinkedList()
 cll.append(10)
-cll.append(20)
-cll.append(30)
 cll.display()
