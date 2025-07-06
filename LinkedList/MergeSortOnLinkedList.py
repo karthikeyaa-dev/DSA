@@ -96,14 +96,12 @@ def printList(head):
 		print(curr_node.data, end = " ")
 		curr_node = curr_node.next
 	print(' ')
-	
+
 # Driver Code
 if __name__ == '__main__':
 	li = LinkedList()
 	
-	# Let us create a unsorted linked list
-	# to test the functions created.
-	# The list shall be a: 2->3->20->5->10->15
+
 	li.append(15)
 	li.append(10)
 	li.append(5)
