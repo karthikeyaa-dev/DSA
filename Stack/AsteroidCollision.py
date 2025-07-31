@@ -20,7 +20,6 @@ def asteroidCollision(asteroids):
     
     return stack
 
-# Example usage:
 asteroids = [5, 10, -5]
 print(asteroidCollision(asteroids))  # Output: [5, 10]
 
