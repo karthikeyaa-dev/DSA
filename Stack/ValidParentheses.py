@@ -12,5 +12,5 @@ class Solution:
             elif stack[-1] == "[" and i == "]": stack.pop()
             
             else: stack.append(i)
-        
+
         return len(stack) == 0
