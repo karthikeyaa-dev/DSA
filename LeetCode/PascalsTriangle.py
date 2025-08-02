@@ -7,3 +7,6 @@ class Solution(object):
                 row[j] = triangle[row_num - 1][j - 1] + triangle[row_num - 1][j]
             triangle.append(row)
         return triangle
+
+solution=Solution()
+print(solution.generate(5))
