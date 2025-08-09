@@ -16,4 +16,4 @@ def add_users():
     return jsonify({'message':'User added succesfully'}), 201
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=False)

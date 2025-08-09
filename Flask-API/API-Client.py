@@ -20,5 +20,5 @@ def get_user():
         print("❌ Server did not return JSON.")
 
 if __name__=="__main__":
-    create_user("Rohit")
+    create_user("Asuran")
     get_user()
