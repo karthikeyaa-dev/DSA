@@ -22,17 +22,14 @@ class Solution(object):
                 if word in word_count:
                     seen[word] += 1
 
-                    # If word appears more times than expected, move left window
                     while seen[word] > word_count[word]:
                         left_word = s[left:left + word_len]
                         seen[left_word] -= 1
                         left += word_len
 
-                    # If window matches size of concatenated words, store result
                     if right - left == concat_len:
                         result.append(left)
                 else:
-                    # Reset if the word is not in words
                     seen.clear()
                     left = right
 
