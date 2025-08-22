@@ -15,7 +15,6 @@ class Solution(object):
             (4, 'IV'),
             (1, 'I')
         ]
-
         roman = ""
         for value, symbol in value_map:
             while num >= value:
