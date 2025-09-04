@@ -1,4 +1,5 @@
-
+from typing import List
+from collections import defaultdict
 class Solution:
     def findShortestSubArray(self, nums: List[int]) -> int:
         count = defaultdict(int)
