@@ -1,3 +1,4 @@
+from typing import List
 class Solution(object):
     def isValid(self, s):
         stack = []
