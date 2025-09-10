@@ -1,4 +1,4 @@
-
+from typing import List
 class Solution:
     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
         max_count = count = 0
